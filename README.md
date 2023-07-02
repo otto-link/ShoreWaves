@@ -35,3 +35,4 @@ bin/./shorewaves
 - Dear ImGui: https://github.com/ocornut/imgui
 - stb_image: https://github.com/nothings/stb
 - Macro-Logger: https://github.com/dmcrodrigues/macro-logger
+- libInterpolate: https://github.com/CD3/libInterpolate
