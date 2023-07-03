@@ -1,7 +1,7 @@
 # ShoreWaves
 A minimalist GUI to generate shore Gerstner waves.
 
-https://github.com/otto-link/ShoreWaves/assets/121820229/9580364b-735c-431f-9da2-64cdf3ba4c40
+https://github.com/otto-link/ShoreWaves/assets/121820229/cfd6f00d-f214-498a-b91c-9de5b9419149
 
 # License
 
