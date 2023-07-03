@@ -3,7 +3,7 @@ project(shorewaves)
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Ofast -ffast-math -funroll-all-loops -funsafe-loop-optimizations -funsafe-math-optimizations -frounding-math -fopenmp")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Ofast -ffast-math -funroll-all-loops -funsafe-loop-optimizations -funsafe-math-optimizations -frounding-math -fopenmp")
 
 # Find required packages
 find_package(glfw3 REQUIRED)
@@ -41,14 +41,21 @@ target_include_directories(${PROJECT_NAME}
                              ${PROJECT_SOURCE_DIR}/include
 			   PRIVATE
 			     ${IMGUI_INCLUDE}
-     			     external/macro-logger/include
-			     external/stb_image/include
+			     ${PROJECT_SOURCE_DIR}/external/FastNoiseLite/include
+			     ${PROJECT_SOURCE_DIR}/external/libInterpolate/include
+     			     ${PROJECT_SOURCE_DIR}/external/macro-logger/include
+			     ${PROJECT_SOURCE_DIR}/external/stb_image/include
 			    )
-			     
+
+find_package(Eigen3 REQUIRED) # required by libInterpolate
+include_directories(${EIGEN3_INCLUDE_DIRS})
+target_link_libraries(${PROJECT_NAME} Eigen3::Eigen)
+
 # Link libraries
 target_link_libraries(${PROJECT_NAME}
     glfw
     OpenGL::GL
+    Eigen3::Eigen
 )
 
 # Set C++ version

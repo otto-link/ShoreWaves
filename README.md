@@ -38,3 +38,4 @@ bin/./shorewaves
 - stb_image: https://github.com/nothings/stb
 - Macro-Logger: https://github.com/dmcrodrigues/macro-logger
 - libInterpolate: https://github.com/CD3/libInterpolate
+- FastNoiseLite: https://github.com/Auburn/FastNoiseLite
