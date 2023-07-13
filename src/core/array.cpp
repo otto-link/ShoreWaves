@@ -229,7 +229,7 @@ std::vector<uint8_t> Array::to_img_8bit_rgb(Array *p_mask)
   {
     float a = 1.f / (vmax - vmin);
     float b = -vmin / (vmax - vmin);
-    int   k = 0;
+    int   k = -1;
 
     for (int j = this->shape[1] - 1; j > -1; j--)
       for (int i = 0; i < this->shape[0]; i++)
@@ -253,9 +253,9 @@ std::vector<uint8_t> Array::to_img_8bit_rgb(Array *p_mask)
             for (int p = 0; p < 3; p++)
               rgb[p] = 0.f;
 
+        data[++k] = (uint8_t)std::floor(255 * rgb[0]); // R
         data[++k] = (uint8_t)std::floor(255 * rgb[1]); // G
         data[++k] = (uint8_t)std::floor(255 * rgb[2]); // B
-        data[++k] = (uint8_t)std::floor(255 * rgb[0]); // R
       }
   }
   return data;
